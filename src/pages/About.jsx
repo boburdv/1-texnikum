@@ -3,13 +3,11 @@ export default function About() {
     <div className="max-w-6xl mx-auto mt-36 mb-24 px-4">
       <div className="bg-base-100 shadow-xl rounded-xl overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
-          {/* Left: Image */}
           <div className="w-full h-72 md:h-auto rounded-lg overflow-hidden shadow-md">
             <img src="/home-img.jpg" alt="About Image" className="w-full h-full object-cover" />
           </div>
 
-          {/* Right: Text */}
-          <div className="space-y-6 flex flex-col justify-center">
+          <div className="flex flex-col justify-center space-y-6">
             <p className="text-gray-700 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo, sapien in facilisis gravida, sem purus elementum nisi, sed dictum ligula arcu vel libero.
             </p>
