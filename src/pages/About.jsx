@@ -1,9 +1,9 @@
 export default function About() {
   return (
     <div className="max-w-6xl mx-auto mt-36 mb-24 px-4">
-      <div className="bg-base-100 shadow-xl rounded-xl overflow-hidden">
+      <div className="bg-base-100 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
-          <div className="w-full h-72 md:h-auto rounded-lg overflow-hidden shadow-md">
+          <div className="w-full h-72 md:h-auto overflow-hidden">
             <img src="/home-img.jpg" alt="About Image" className="w-full h-full object-cover" />
           </div>
 
