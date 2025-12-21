@@ -42,32 +42,24 @@ export default function Header() {
   };
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-base-100 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}>
+    <div className={`fixed top-0 left-0 right-0 shadow-xs z-50 bg-base-100 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}>
       {/* ================= TOP INFO ================= */}
       <div className="bg-base-200 border-b border-base-300">
-        <div className="max-w-6xl mx-auto flex justify-between items-center py-2 px-4 text-sm">
+        <div className="max-w-6xl mx-auto flex justify-between items-center py-2 px-2 text-sm">
           {/* Left */}
           <div className="flex gap-5">
             <div className="flex items-center gap-1">
-              <PhoneIcon className="w-4 h-4" />
-              (90) 123-4567
+              <PhoneIcon className="w-4 h-4" /> (90) 123-4567
             </div>
-
-            {/* email faqat desktop */}
             <div className="hidden md:flex items-center gap-1">
-              <EnvelopeIcon className="w-4 h-4" />
-              info@politex.uz
+              <EnvelopeIcon className="w-4 h-4" /> info@politex.uz
             </div>
           </div>
-
           {/* Right */}
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
-              <ClockIcon className="w-4 h-4" />
-              8:00 - 18:00
+              <ClockIcon className="w-4 h-4" /> 8:00 - 18:00
             </div>
-
-            {/* socials faqat desktop */}
             <div className="hidden md:flex gap-2 ml-3">
               {socialLinks.map((s, i) => (
                 <a key={i} href={s.href} className="p-1 rounded-lg bg-white hover:bg-primary hover:text-white">
@@ -80,8 +72,8 @@ export default function Header() {
       </div>
 
       {/* ================= NAVBAR ================= */}
-      <div className="navbar bg-base-100 shadow-sm max-w-6xl mx-auto">
-        {/* ☰ LIST ICON → DROPDOWN */}
+      <div className="navbar bg-base-100 py-4 px-2 max-w-6xl mx-auto">
+        {/* MOBILE HAMBURGER */}
         <div className="flex-none md:hidden">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-square btn-ghost">
@@ -90,30 +82,25 @@ export default function Header() {
               </svg>
             </div>
 
-            <ul tabIndex={-1} className="dropdown-content menu bg-base-100 rounded-box z-50 w-72 p-4 shadow">
+            <ul tabIndex={-1} className="dropdown-content menu bg-base-100 rounded-box z-50 w-52 p-2 shadow-sm">
               {/* LOGO */}
-              <li className="col-span-2 text-center mb-3">
-                <span className="text-lg font-semibold text-gray-700 ">POLITEXNIKUM</span>
+              <li className="text-center mb-2">
+                <span className="text-sm font-semibold text-gray-700">POLITEXNIKUM</span>
               </li>
 
-              {/* GRID MENU */}
-              <div className="grid grid-cols-2 text-sm gap-2">
-                {/* LEFT */}
-                <li className="hover:bg-gray-200 rounded">
-                  <Link to="/">Bosh sahifa</Link>
-                </li>
-                <li className="hover:bg-gray-200 rounded">
-                  <Link to="/">Yarmarka</Link>
-                </li>
-
-                {/* RIGHT */}
-                <li className="hover:bg-gray-200 rounded">
-                  <Link to="/admin">Admin</Link>
-                </li>
-                <li className="hover:bg-gray-200 rounded">
-                  <Link to="/about">Haqida</Link>
-                </li>
-              </div>
+              {/* MENU ITEMS */}
+              <li className="hover:bg-gray-200 rounded">
+                <Link to="/">Bosh sahifa</Link>
+              </li>
+              <li className="hover:bg-gray-200 rounded">
+                <Link to="/">Yarmarka</Link>
+              </li>
+              <li className="hover:bg-gray-200 rounded">
+                <Link to="/admin">Admin</Link>
+              </li>
+              <li className="hover:bg-gray-200 rounded">
+                <Link to="/about">Haqida</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -133,6 +120,9 @@ export default function Header() {
           <Link to="/about" className="hover:text-primary">
             Haqida
           </Link>
+          <Link to="/" className="hover:text-primary">
+            Yarmarka
+          </Link>
           <Link to="/admin" className="hover:text-primary">
             Admin
           </Link>
@@ -141,7 +131,7 @@ export default function Header() {
         {/* AVATAR */}
         <div className="flex-none">
           {!user ? (
-            <Link to="/auth" className="btn btn-primary btn-sm gap-1">
+            <Link to="/auth" className="btn btn-primary btn-sm gap-1 ml-6">
               Kirish <UserIcon className="w-4 h-4" />
             </Link>
           ) : (
