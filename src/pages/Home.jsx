@@ -33,13 +33,13 @@ export default function Home() {
       .then(({ data }) => data && setDynamicCategories(data));
   }, []);
 
-  const staticSkeletons = Array.from({ length: 6 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse aspect-[4/1.8] rounded-lg" />);
+  const staticSkeletons = Array.from({ length: 6 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse lg:aspect-[4/2.1] rounded-lg" />);
 
-  const dynamicSkeletons = Array.from({ length: 8 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse aspect-[1.2/1] rounded-lg" />);
+  const dynamicSkeletons = Array.from({ length: 8 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse lg:aspect-[3/1.7] rounded-lg" />);
 
   return (
     <div>
-      <div className="relative w-full h-[450px] md:h-[500px] lg:h-[550px] mt-[105px]">
+      <div className="relative w-full h-[450px] md:h-[500px] lg:h-[550px] mt-[100px]">
         <img src="/home-img.jpg" alt="hero" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute inset-0 flex items-center justify-center px-4">
@@ -55,7 +55,7 @@ export default function Home() {
 
       <div className="max-w-6xl mx-auto mt-24 mb-10 px-4">
         <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-8">Kasb yo'nalishlari</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5">
           {staticCategories.length === 0
             ? staticSkeletons
             : staticCategories.map((cat) => {
@@ -79,7 +79,7 @@ export default function Home() {
 
       <div className="max-w-6xl mx-auto mt-20 mb-24 px-4">
         <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-8">Yarmarka</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
           {dynamicCategories.length === 0
             ? dynamicSkeletons
             : dynamicCategories.map((cat) => {
@@ -88,7 +88,7 @@ export default function Home() {
                   <Link key={cat.id} to={`/category/${encodeURIComponent(cat.name)}`}>
                     <div className="card border border-base-300 shadow hover:shadow-lg transition flex items-center p-4 gap-4">
                       <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full">
-                        <Icon className="text-5xl text-primary" />
+                        <Icon className="text-4xl text-primary" />
                       </div>
                       <div className="flex-1">
                         <h3 className="lg:text-xl font-semibold text-base line-clamp-1">{cat.name}</h3>
