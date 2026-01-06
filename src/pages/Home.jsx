@@ -45,7 +45,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <div className="w-full max-w-6xl text-white text-center md:text-left space-y-4 md:space-y-6 px-4">
             <span className="inline-block bg-primary px-4 py-1.5 rounded-full text-sm font-semibold mx-auto md:mx-0">RISHTON TUMAN</span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug mx-auto md:mx-0 uppercase">1-son Politeхnikumi</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug mx-auto md:mx-0 uppercase">1-son Teхnikumi</h1>
             <p className="text-base md:text-lg font-medium text-white/90 max-w-lg mx-auto md:mx-0">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, nam quam praesentium est quae perferendis laudantium quia iure? Architecto.
             </p>

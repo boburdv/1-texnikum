@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row gap-10 w-full items-center sm:items-start justify-center sm:justify-between text-center sm:text-left">
           <div className="flex flex-col items-center sm:items-start max-w-xs">
             <a href="/" className="text-3xl font-semibold text-gray-700">
-              POLITEXNIKUM
+              TEXNIKUM
             </a>
             <a href="https://maps.app.goo.gl/rgwaKGch5jPKVe286" className="hover:text-primary max-w-60 mt-5">
               Farg'ona viloyati, Rishton tumani Farg'ona yo'li ko'chasi 1-son
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      <div className="border-t border-base-300 py-4 text-center text-sm text-base-content/70">© {year} Politexnikum</div>
+      <div className="border-t border-base-300 py-4 text-center text-sm text-base-content/70">© {year} Texnikum.work</div>
     </div>
   );
 }

@@ -106,7 +106,7 @@ export default function Header() {
         {/* LOGO (desktop) */}
         <div className="flex-1 justify-center md:justify-start">
           <Link to="/" className="hidden md:block text-[25px] md:ml-2 font-semibold text-gray-700">
-            POLITEXNIKUM
+            TEXNIKUM
           </Link>
         </div>
 
