@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="max-w-6xl mx-auto mt-29 lg:mt-36 mb-24 px-4">
-      <div className="bg-base-100 overflow-hidden">
+      <div className=" overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-8 gap-4">
           <div className="w-full h-72 md:h-auto overflow-hidden">
             <img src="/home-img.jpg" alt="About Image" className="w-full h-full object-cover rounded-md" />
