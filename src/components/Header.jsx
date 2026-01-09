@@ -92,9 +92,9 @@ export default function Header() {
               <li className="hover:bg-gray-200 rounded">
                 <Link to="/">Bosh sahifa</Link>
               </li>
-              <li className="hover:bg-gray-200 rounded">
-                <Link to="/">Yarmarka</Link>
-              </li>
+              <Link to="/" onClick={() => document.getElementById("yarmarka")?.scrollIntoView({ behavior: "smooth" })}>
+                Yarmarka
+              </Link>
 
               <li className="hover:bg-gray-200 rounded">
                 <Link to="/about">Haqida</Link>
@@ -118,7 +118,7 @@ export default function Header() {
           <Link to="/about" className="hover:text-primary">
             Haqida
           </Link>
-          <Link to="/" className="hover:text-primary">
+          <Link to="/" onClick={() => document.getElementById("yarmarka")?.scrollIntoView({ behavior: "smooth" })}>
             Yarmarka
           </Link>
         </nav>
@@ -135,7 +135,7 @@ export default function Header() {
                 <div className="bg-primary text-white w-8 h-8 flex items-center justify-center">{user.user_metadata?.full_name?.[0]?.toUpperCase() ?? "U"}</div>
               </button>
               <ul className="dropdown-content menu bg-base-100 rounded-box w-52 shadow mt-3 p-2">
-                <li>
+                <li className="disabled">
                   <span>Ism: {user.user_metadata?.full_name}</span>
                 </li>
                 <li>
