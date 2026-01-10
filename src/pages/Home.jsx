@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase";
+import React from "react";
 
 import { FaComputer, FaQuestion } from "react-icons/fa6";
 import { TbNeedleThread, TbPlug, TbFlame } from "react-icons/tb";
@@ -35,7 +36,7 @@ export default function Home() {
 
   const staticSkeletons = Array.from({ length: 6 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse lg:aspect-[4/2.1] rounded-lg" />);
 
-  const dynamicSkeletons = Array.from({ length: 8 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse lg:aspect-[3/1.7] rounded-lg" />);
+  const dynamicSkeletons = Array.from({ length: 6 }).map((_, idx) => <div key={idx} className="bg-gray-300 animate-pulse lg:aspect-[3/1.7] rounded-lg" />);
 
   return (
     <div>
@@ -62,14 +63,17 @@ export default function Home() {
                 const Icon = iconMap[cat.icon] || FaQuestion;
                 return (
                   <Link key={cat.id} to={`/${cat.name}`}>
-                    <div className="card border-base-300 shadow border hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
-                      <div className="flex items-center justify-center bg-gray-100 w-20 p-1 rounded-br-md">
-                        <Icon className="text-4xl text-primary" />
+                    <div className="card border border-gray-200 shadow hover:shadow-md transition-shadow duration-300 flex flex-col gap-2 p-4 bg-white">
+                      {/* NAME + ICON bir qatorda */}
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-cente">
+                          <Icon className=" text-primary w-5 h-5" />
+                        </div>
+                        <h2 className="text-xl font-semibold text-gray-800">{cat.name}</h2>
                       </div>
-                      <div className="card-body p-4 md:p-5">
-                        <h2 className="card-title text-xl font-semibold">{cat.name}</h2>
-                        <p className="line-clamp-3">{cat.description}</p>
-                      </div>
+
+                      {/* DESCRIPTION */}
+                      <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">{cat.description}</p>
                     </div>
                   </Link>
                 );
@@ -77,26 +81,27 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-20 mb-24 px-4">
+      <div className="max-w-6xl mx-auto mt-20 mb-24 px-4" id="yarmarka">
         <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-8">Yarmarka</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {dynamicCategories.length === 0
             ? dynamicSkeletons
-            : dynamicCategories.map((cat) => {
-                const Icon = iconMap[cat.icon] || FaQuestion;
-                return (
-                  <Link key={cat.id} to={`/category/${encodeURIComponent(cat.name)}`}>
-                    <div className="card border border-base-300 shadow hover:shadow-lg transition flex items-center p-4 gap-4">
-                      <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-gray-100 rounded-full">
-                        <Icon className="text-4xl text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="lg:text-xl font-semibold text-base line-clamp-1">{cat.name}</h3>
-                      </div>
+            : dynamicCategories.map((cat) => (
+                <Link key={cat.id} to={`/category/${encodeURIComponent(cat.name)}`}>
+                  <div className="card border border-gray-200 shadow hover:shadow-md transition-shadow flex flex-row items-start gap-4 p-4 sm:p-5 bg-white">
+                    {/* ICON */}
+                    <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-base-200 rounded-full">
+                      {iconMap[cat.icon] ? React.createElement(iconMap[cat.icon], { className: "text-4xl text-primary" }) : <FaQuestion className="text-4xl text-primary" />}
                     </div>
-                  </Link>
-                );
-              })}
+
+                    {/* NAME + DESCRIPTION */}
+                    <div className="flex-1 flex flex-col justify-center gap-1">
+                      <h3 className="text-xl font-semibold text-gray-800">{cat.name}</h3>
+                      <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">{cat.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
         </div>
       </div>
     </div>
